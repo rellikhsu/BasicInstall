@@ -230,6 +230,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;111m'
+export TERM=xterm
 shopt -s autocd
 shopt -s cmdhist
 shopt -s histappend
@@ -253,4 +254,41 @@ alias vi='vim'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias top='sudo top'
+EOF
+
+# screenrc
+${CAT} > /etc/skel/.screenrc << EOF
+defc1 off
+caption always "%-w%<%{=B GK}%n %t%{= KW}%+w"
+hardstatus alwayslastline "%{=b BW} {%l}%018=%{=b WK} %n %t %-029=%{YK} %Y %M %d(%D) %{RW} %C %A"
+defencoding utf-8
+defutf8 on
+shelltitle shell
+bind b encoding big5 utf8
+bind u encoding utf8 utf8
+bind w height -w 24
+bind m height -w
+termcapinfo screen 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defscrollback 20000
+EOF
+
+# vimrc
+${CAT} > /etc/skel/.vimrc << EOF
+autocmd FileType c set expandtab
+autocmd FileType cpp set expandtab
+filetype on
+syntax on
+set autoindent
+set background=dark
+set enc=utf-8
+set encoding=utf8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileformat=unix
+set nocompatible
+set nomodeline
+set paste
+set showmatch
+set tenc=utf8
+set termencoding=utf-8
 EOF
