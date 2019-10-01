@@ -65,7 +65,7 @@ INST_PACKAGE_LIST="
 		vim-nox \
 		xfsdump \
 		xfsprogs \
-		xz"
+		xz-utils"
 
 # Unset $LANG $LC_ALL $LC_CTYPE
 unset LANG
@@ -87,8 +87,8 @@ EOF
 # update & install pre-install packages
 ${APT} clean
 ${APT} update
-${APT} install ${PRE_INST_PACKAGE_LIST}
-${APT} install ${INST_PACKAGE_LIST}
+${APT} install -y ${PRE_INST_PACKAGE_LIST}
+${APT} install -y ${INST_PACKAGE_LIST}
 
 #
 echo "Setting timezone to Asia/Taipei..."
@@ -140,14 +140,14 @@ if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
 fi
 #
-bold=$(tput -Txterm bold)
-reset=$(tput -Txterm sgr0)
-blue=$(tput -Txterm setaf 4)
-green=$(tput -Txterm setaf 2)
-yellow=$(tput -Txterm setaf 3)
-red=$(tput -Txterm setaf 1)
+bold=\$( tput -Txterm bold )
+reset=\$( tput -Txterm sgr0 )
+blue=\$( tput -Txterm setaf 4 )
+green=\$( tput -Txterm setaf 2 )
+yellow=\$( tput -Txterm setaf 3 )
+red=\$( tput -Txterm setaf 1 )
 #
-export PS1='\[$bold\]\u\[$blue\]@\[$reset\]\h\[$green\](\T)\[$red\]\[$reset\][\w]$\[$reset\] '
+export PS1='\[\$bold\]\u\[\$blue\]@\[\$reset\]\h\[\$green\](\T)\[\$red\]\[\$reset\][\w]\$\[\$reset\] '
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US:us
 export GREP_COLORS='ms=01;32:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
