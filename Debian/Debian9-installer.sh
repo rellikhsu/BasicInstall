@@ -41,7 +41,6 @@ INST_PACKAGE_LIST="
 		lsb-release \
 		lsof \
 		make \
-		mdadm \
 		mosh \
 		most \
 		mtr-tiny \
