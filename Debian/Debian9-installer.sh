@@ -74,14 +74,12 @@ unset LC_ALL
 
 # Install /etc/apt/sources.list
 ${CAT} > /etc/apt/sources.list <<EOF
-deb https://deb.debian.org/debian/ stretch main contrib non-free
-deb-src https://deb.debian.org/debian/ stretch main contrib non-free
-
+deb http://deb.debian.org/debian/ stretch main contrib non-free
+deb-src http://deb.debian.org/debian/ stretch main contrib non-free
 deb http://security.debian.org/ stretch/updates main contrib non-free
 deb-src http://security.debian.org/ stretch/updates main contrib non-free
-
-deb https://deb.debian.org/debian/ stretch-updates main contrib non-free
-deb-src https://deb.debian.org/debian/ stretch-updates main contrib non-free
+deb http://deb.debian.org/debian/ stretch-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ stretch-updates main contrib non-free
 EOF
 
 # update & install pre-install packages
