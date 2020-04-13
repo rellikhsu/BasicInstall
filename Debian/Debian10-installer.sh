@@ -20,7 +20,7 @@ PRE_INST_PACKAGE_LIST="
 
 INST_PACKAGE_LIST="
 		aptitude \
-		autofs5 \
+		autofs \
 		bash-completion \
 		chrony \
 		cron-apt \
@@ -49,7 +49,6 @@ INST_PACKAGE_LIST="
 		pigz \
 		postfix \
 		psmisc \
-		pxz \
 		python-requests \
 		rsync \
 		sharutils \
