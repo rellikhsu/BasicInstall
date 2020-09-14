@@ -144,13 +144,15 @@ yellow=\$( tput -Txterm setaf 3 )
 red=\$( tput -Txterm setaf 1 )
 #
 export PS1='\[\$bold\]\u\[\$blue\]@\[\$reset\]\h\[\$green\](\T)\[\$red\]\[\$reset\][\w]\$\[\$reset\] '
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US:us
+export EDITOR="/usr/bin/vim"
 export GREP_COLORS='ms=01;32:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+export LANG="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US:us"
+export LC_TERMINAL="iTerm2"
 export PAGER="/usr/bin/less"
-export EDITOR="/usr/bin/vim"
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;38;5;208m'
 export LESS_TERMCAP_me=$'\E[0m'
