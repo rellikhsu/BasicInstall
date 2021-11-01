@@ -44,6 +44,7 @@ INST_PACKAGE_LIST="
 		mosh \
 		most \
 		mtr-tiny \
+		net-tools \
 		netcat-openbsd \
 		openssh-server \
 		pigz \
