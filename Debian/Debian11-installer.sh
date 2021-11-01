@@ -54,6 +54,7 @@ INST_PACKAGE_LIST="
 		postfix \
 		psmisc \
 		rsync \
+		screen \
 		sharutils \
 		smartmontools \
 		socat \
