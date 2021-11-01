@@ -133,6 +133,22 @@ ${LOCALEGEN}
 # Basic /etc/sysctl.conf settings
 echo "Appending to /etc/sysctl.conf..."
 ${CAT} > /etc/sysctl.conf << EOF
+net.core.default_qdisc = fq
+net.core.netdev_max_backlog = 16384
+net.core.optmem_max = 65535
+net.core.somaxconn = 1048576
+net.ipv4.tcp_congestion_control = bbr
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_keepalive_intvl = 15
+net.ipv4.tcp_keepalive_probes = 3
+net.ipv4.tcp_keepalive_time = 1800
+net.ipv4.tcp_notsent_lowat = 16384
+net.ipv4.tcp_rfc1337 = 1
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.all.autoconf = 0
+net.ipv6.conf.default.accept_ra = 0
+net.ipv6.conf.default.autoconf = 0
 vm.swappiness = 1
 EOF
 
