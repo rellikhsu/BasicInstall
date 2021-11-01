@@ -27,6 +27,7 @@ INST_PACKAGE_LIST="
 		dnsutils \
 		dpkg-awk \
 		dstat \
+		file \
 		firmware-linux-free \
 		gawk \
 		gcc \
