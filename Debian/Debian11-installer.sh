@@ -38,6 +38,9 @@ INST_PACKAGE_LIST="
 		irqbalance \
 		jq \
 		less \
+		libluajit-5.1-dev \
+		libssl1.1 \
+		libz-dev \
 		lsb-release \
 		lsof \
 		make \
