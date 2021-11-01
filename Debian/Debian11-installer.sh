@@ -173,7 +173,6 @@ unset PROMPT_COMMAND
 alias ls='ls -F --color=auto'
 alias l='ls -alhiF --color=auto'
 alias ll='ls -alhiF --color=auto'
-alias count='find . -maxdepth 1 -type d -exec du -s {} \; | sort -g'
 alias ssh='ssh -2 -4 -e none -o ForwardAgent=yes'
 alias e='/usr/bin/clear && exit'
 alias egrep='egrep --color=auto'
