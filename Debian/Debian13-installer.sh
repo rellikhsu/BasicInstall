@@ -3,16 +3,11 @@ set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 APT="/usr/bin/apt"
-AWK="/usr/bin/awk"
 CAT="/bin/cat"
 DPKGRECONFIGURE="/usr/sbin/dpkg-reconfigure"
 ECHO="/bin/echo"
-GREP="/bin/grep"
-IFCONFIG="/sbin/ifconfig"
 LN="/bin/ln"
 LOCALEGEN="/usr/sbin/locale-gen"
-PASSWD="/usr/bin/passwd"
-SED="/bin/sed"
 SYSTEMCTL="/usr/bin/systemctl"
 
 PRE_INST_PACKAGE_LIST="
@@ -64,13 +59,13 @@ ${CAT} > /etc/apt/sources.list.d/debian.sources <<EOF
 Types: deb deb-src
 URIs: mirror+file:///etc/apt/mirrors/debian.list
 Suites: trixie trixie-updates trixie-backports
-Components: main contrib non-free
+Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 Types: deb deb-src
 URIs: mirror+file:///etc/apt/mirrors/debian-security.list
 Suites: trixie-security
-Components: main contrib non-free
+Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 EOF
 
@@ -126,7 +121,6 @@ EOF
 
 #啟動 chrohny
 ${SYSTEMCTL} enable --now chrony.service
-${SYSTEMCTL} start chrony.service
 
 # Install locales
 ${CAT} /dev/null > /etc/default/locale
@@ -176,7 +170,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;111m'
-export TERM=xterm
 shopt -s autocd
 shopt -s cmdhist
 shopt -s histappend
@@ -187,7 +180,7 @@ alias ls='ls -F --color=auto'
 alias l='ls -alhiF --color=auto'
 alias ll='ls -alhiF --color=auto'
 alias count='find . -maxdepth 1 -type d -exec du -s {} \; | sort -g'
-alias ssh='ssh -2 -4 -e none -o ForwardAgent=yes'
+alias ssh='ssh -4 -e none -o ForwardAgent=yes'
 alias e='/usr/bin/clear && exit'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
