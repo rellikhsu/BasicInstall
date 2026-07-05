@@ -57,13 +57,13 @@ unset LC_ALL
 # Install /etc/apt/sources.list.d
 ${CAT} > /etc/apt/sources.list.d/debian.sources <<EOF
 Types: deb deb-src
-URIs: mirror+file:///etc/apt/mirrors/debian.list
+URIs: https://deb.debian.org/debian
 Suites: trixie trixie-updates trixie-backports
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 Types: deb deb-src
-URIs: mirror+file:///etc/apt/mirrors/debian-security.list
+URIs: https://deb.debian.org/debian-security
 Suites: trixie-security
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
